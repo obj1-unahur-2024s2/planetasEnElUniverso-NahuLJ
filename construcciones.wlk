@@ -6,18 +6,18 @@ class Muralla {
 }
 
 class Museo {
-  const indiceDeImportancia
-  var superficieCubierta
+  var indiceDeImportancia
+  const superficieCubierta
 
   method initialize(){
-    if(superficieCubierta > 5){
-      superficieCubierta = 5
+    if(indiceDeImportancia > 5){
+      indiceDeImportancia = 5
     }
-    else if (superficieCubierta < 1){
-      superficieCubierta = 1
+    else if (indiceDeImportancia < 1){
+      indiceDeImportancia = 1
     }
   }
 
-  method valor() = indiceDeImportancia * superficieCubierta
+  method valor() = superficieCubierta * indiceDeImportancia  
 
 }

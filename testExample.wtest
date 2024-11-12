@@ -12,7 +12,7 @@ describe "group of tests for pepita" {
   //CONSTRUCCIONES
   const muralla1 = new Muralla (longitud = 30)
   const muralla2 = new Muralla (longitud = 50)
-  const museo = new Museo (indiceDeImportancia = 30, superficieCubierta = 4)
+  const museo = new Museo (indiceDeImportancia = 4, superficieCubierta = 30)
 
   //PLANETA
   const planeta = new Planeta()
