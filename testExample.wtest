@@ -1,9 +1,46 @@
-import example.pepita
+import personas.*
+import construcciones.*
+import planetas.*
 
 describe "group of tests for pepita" {
+  //PERSONAS
+  const persona1 = new Persona (edad = 18)
+  const persona2 = new Persona (edad = 35)
+  const persona3 = new Persona (edad = 27)
+  const persona4 = new Persona (edad = 17)
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  //CONSTRUCCIONES
+  const muralla1 = new Muralla (longitud = 30)
+  const muralla2 = new Muralla (longitud = 50)
+  const museo = new Museo (indiceDeImportancia = 30, superficieCubierta = 4)
+
+  //PLANETA
+  const planeta = new Planeta()
+  
+  method initialize(){
+    planeta.agregarHabitantes([persona1,persona2,persona3,persona4])
+    planeta.agregarConstrucciones([muralla1,muralla2,museo])
   }
 
+  test "la delegacion diplomatica del planeta esta formada por la persona1, 2 y 3" {
+    assert.equals([persona1,persona2,persona3], planeta.delegacionDiplomatica())
+  }
+
+  test "el planeta es valioso" {
+    assert.that(planeta.esValioso())
+  }
+
+  test "si se agrega un planeta que tiene una muralla chica no es valioso" {
+    const planeta2 = new Planeta ()
+    const muralla3 = new Muralla (longitud = 5)
+    planeta2.agregarHabitantes([persona1,persona2,persona3,persona4])
+    planeta2.agregarConstrucciones([muralla3])
+
+    assert.notThat(planeta2.esValioso())
+  }
+
+  test "si la persona4 cumple anios, ahora la delegacion contiene a todos los habitantes" {
+    persona4.cumplirAnios()
+    assert.equals([persona1,persona2,persona3,persona4], planeta.delegacionDiplomatica())
+  }
 }
