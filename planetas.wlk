@@ -21,4 +21,12 @@ class Planeta {
   method habitanteConMasRecursos() = habitantes.max({habitante => habitante.recursos()})
 
   method esValioso() = construcciones.all({construccion => construccion.valor() > 100})
+
+  method hacerQueLaDelegacionTrabaje(unTiempo){
+    self.delegacionDiplomatica().forEach({habitante => habitante.trabajarDuranteEnPlaneta(unTiempo, self)})
+  }
+
+  method invadirPlanetaYHacerTrabajarASuDelegacionDurante(unPlaneta, unTiempo){
+    unPlaneta.hacerQueLaDelegacionTrabaje(unTiempo)
+  }
 }
