@@ -71,7 +71,9 @@ class Constructor inherits Persona {
   override method trabajarDuranteEnPlaneta(unTiempo,unPlaneta){
     cantConstrucciones += 1
     self.gastarDeRecursosCantidad(5)
-    regionDondeVive.construccionDeTiempoDeConstructor(unTiempo, self)
+    unPlaneta.construcciones().add(
+      regionDondeVive.construccionDeTiempoDeConstructor(unTiempo, self)
+    )
   }
 
 }
