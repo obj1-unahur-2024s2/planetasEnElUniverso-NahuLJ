@@ -57,7 +57,6 @@ class Productor inherits Persona {
 class Constructor inherits Persona {
   var cantConstrucciones = 0
   const regionDondeVive 
-  const property construcciones = []
   const property inteligencia
 
   method cantConstrucciones() = cantConstrucciones
